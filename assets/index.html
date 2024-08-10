@@ -1,0 +1,174 @@
+<!doctype html>
+
+<html>
+	<head>
+    <link rel="icon" href="/assets/imageIcon-Br-WjUay.png">
+		<title>Pix</title>
+		<meta charset='utf-8'>
+		
+		<!-- <script defer src='./global.js'></script>
+		<script defer src='./RenderBtn.js'></script>
+		
+		<script defer src='./RenderViewScaleInput.js'></script>
+		<script defer src='./RendersManager.js'></script>
+		<script defer src='./RenderWrapCloseBtn.js'></script>
+		<script defer src='./RenderWrap.js'></script>
+		<script defer src='./RenderPointsWrap.js'></script>
+		<script defer src='./RenderViewTab.js'></script>
+		<script defer src='./RenderViewTabsWrap.js'></script>
+		<script defer src='./RenderViewTabFactory.js'></script>
+		
+		<script defer src='./RenderSettingOutput.js'></script>
+		<script defer src='./RenderSettingInput.js'></script>
+		<script defer src='./RenderSetting.js'></script>
+		<script defer src='./RenderSettingsInputOutputFactory.js'></script>
+		<script defer src='./RenderSettingsModuleFactory.js'></script>
+		<script defer src='./RenderSettingsModule.js'></script>
+		
+		<script defer src='./RenderViewTabModuleFactory.js'></script>
+		<script defer src='./RenderModule.js'></script>
+		<script defer src='./RenderModuleFactory.js'></script>
+		
+		<script defer src='./ImageDataModuleFactory.js'></script>
+		<script defer src='./ImageDataModule.js'></script>
+		
+		<script defer src='./ProgressProcessor.js'></script>
+		<script defer src='./ProgressWrap.js'></script>
+		<script defer src='./ProgressValue.js'></script>
+		<script defer src='./ProgressStage.js'></script>
+		<script defer src='./ProgressModule.js'></script>
+		<script defer src='./ProgressFactory.js'></script>
+		
+		<script defer src='./FileUpload.js'></script>
+		<script defer src='./FileDrop.js'></script>
+		<script defer src='./FileSelect.js'></script>
+		<script defer src='./FileCheck.js'></script>
+		<script defer src='./FileConvertToImage.js'></script>
+		<script defer src='./FileModule.js'></script>
+		<script defer src='./FileModuleFactory.js'></script>
+		
+		<script defer src='./HTMLRender.js'></script>
+		<script defer src='./HTMLRenderPointFactory.js'></script>
+		<script defer src='./HTMLRenderPoint.js'></script>
+		<script defer src='./HTMLModuleFactory.js'></script>
+		<script defer src='./HTMLModule.js'></script>
+		
+		<script defer src='./SVGRender.js'></script>
+		<script defer src='./SVGRenderPointFactory.js'></script>
+		<script defer src='./SVGRenderPoint.js'></script>
+		<script defer src='./SVGModuleFactory.js'></script>
+		<script defer src='./SVGModule.js'></script>
+		
+		<script defer src='./AppModule.js'></script>
+		<script defer src='./AppModuleFactory.js'></script>
+		
+		<script defer src='./lastUpdates.js'></script>
+
+		<script defer src='./main.js'></script> -->
+		<script type="module" crossorigin src="/assets/index-DRlzsqz7.js"></script>
+		<link rel="stylesheet" crossorigin href="/assets/index-g7gic-VJ.css">
+	</head>
+	<body>
+    <div id="waitScreen" class="hide">
+      <span>Wait</span>
+    </div>
+		<section>
+			<input id='fileInput' class='fileInput' type='file' accept='image/*'>
+			<label for='fileInput' class='fileInputLabel'> 
+				<img class='fileInputImg' src='/assets/imageIcon-Br-WjUay.png'>
+			</label>
+		</section>
+		<section class='resolutionSection'>
+			<div>
+				<div> 
+					render height 
+					<span class='curHeightResolution'>  </span>
+				</div>
+				<input 
+					class='resolutionInput resolutionInputHeight' 
+					type='range' 
+					min='5' 
+					max='400' 
+					value='50' 
+					resolutionType='height'
+				>
+			</div>
+			<div>
+				<div> 
+					render width 
+					<span class='curWidthResolution'> </span>
+				</div>
+				<input 
+					class='resolutionInput resolutionInputWidth' 
+					type='range' 
+					min='5' 
+					max='400' 
+					value='50' 
+					resolutionType='width'
+				>
+			</div>
+			<!-- <div>
+				render total pixels
+				<span class='totalResolution'> </span>
+				<span class='totalResolutionWarning'>⚠</span>
+			</div> -->
+		</section>
+		<div class="renderBtnWrap">
+      
+			<span class='renderBtn'>
+				render
+        <span class="renderBtnOff off"></span>
+			</span>
+		</div>
+		<section class='progressWrap'>
+			<div class='progressStage'></div>
+			<div class='progressValue'></div>
+		</section>
+		<section class='renderWrap hide'>
+			<section class='renderTabsWrap'></section>
+			<section class='renderPointsWrap'></section>
+			<div class='renderPixelSize'>
+				<input class='renderPixelSize_input' type='range' min='1' max='10' value='1'>
+			</div>
+			<div class='renderWrap_closeBtn'>
+				<div class='renderWrap_closeBtn_line renderWrap_closeBtn_line-right'></div>
+				<div class='renderWrap_closeBtn_line renderWrap_closeBtn_line-left'></div>
+			</div>
+		</section>
+    <section class='renderSettingsSection'>
+      <div class='renderSettingsWrap renderSettingsWrap-html'>
+        <div class='renderSettings_name'>
+          html
+        </div>
+        <div class='renderCheckboxWrap'>
+          <input id='htmlRenderCheckbox' class='renderCheckbox' type='checkbox' checked>
+          <label class='renderCheckboxMaskLabel' for='htmlRenderCheckbox'>
+            <div class='renderCheckboxMask'>
+              <span class='checkboxMask_inner'></span>
+            </div>
+          </label>
+        </div>
+        <!-- <div class='renderPoint_previewBtn renderPoint_previewBtn-html  disable'></div> -->
+      </div>
+      <!-- <div class='renderSettingsWrap renderSettingsWrap-svg off'>
+    				<div class='renderSettings_name'>
+    					svg
+    				</div>
+    				<div class='renderCheckboxWrap'>
+    					<input id='svgRenderCheckbox' class='renderCheckbox' type='checkbox' disabled>
+    					<label class='renderCheckboxMaskLabel' for='svgRenderCheckbox'>
+    						<div class='renderCheckboxMask'>
+    							<span class='checkboxMask_inner'></span>
+    						</div>
+    					</label>
+    				</div>
+    				<div class='renderPoint_previewBtn renderPoint_previewBtn-svg disable'></div>
+    			</div> -->
+    </section>
+	</body>
+</html>
+
+
+
+    
+	
